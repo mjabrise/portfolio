@@ -1,0 +1,357 @@
+/* GENERAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* NAVBAR STYLES  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #89a8b2;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.navbar img {
+  height: 80px;
+}
+
+.navbar nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar nav ul li {
+  margin: 0 15px;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  position: relative;
+}
+
+.navbar nav ul li a:hover {
+  color: #222;
+}
+
+.navbar nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+/*  RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .navbar nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/*  MAIN CONTENT */
+.main-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+/*  SECTION STYLES */
+.home-section,
+.skills-education-section,
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.project-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* IMAGE STYLES */
+.home-section img,
+.skills-education-section img,
+.contact-image {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .home-section,
+  .skills-education-section,
+  .contact-section {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home-section img,
+  .skills-education-section img,
+  .contact-image {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 20px auto;
+  }
+}
+
+/* CONTACT SECTION */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.contact-list a {
+  display: inline-block;
+}
+
+.contact-list img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, filter 0.3s ease;
+  margin-right: 15px;
+}
+
+.contact-list a:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.contact-list a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .contact-list li {
+    gap: 15px;
+    font-size: 16px;
+  }
+
+  .contact-list img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .contact-list img {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+  }
+}
+
+/*  PROJECT SECTION */
+.project-section {
+  padding: 30px;
+  background-color: #111;
+  border-radius: 12px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.project-section h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 3px solid white;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: white;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.project-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.project-card img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-card p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover p {
+  color: #89a8b2;
+}
+
+/*  VIDEO SECTION */
+.video-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 12px;
+}
+
+.video-section h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 3px solid white;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: white;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.video-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card video {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #333;
+}
+
+.video-card:hover p {
+  color: #89a8b2;
+}
+
+/*  MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .project-images,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .video-card {
+    padding: 15px;
+  }
+
+  .video-section h2 {
+    text-align: center;
+  }
+}
+.highlight-name {
+  color: #a0d0ec; 
+  font-weight: bold;
+  text-shadow: 10px 10px 10px rgba(241, 241, 241, 0.2);
+}
